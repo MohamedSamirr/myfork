@@ -29,6 +29,7 @@ bool Client::initBroadcast(std::string _broadcastAddress, int _broadcastPort) {
 Message *Client::execute(Message *_message) {
     if(_message->getMessage() == "fork") {
         this->forking.executeMyForkClient();
+        std::cout << "I AM THE PARENT!";
     }
     send(_message);
     return receiveWithBlock();

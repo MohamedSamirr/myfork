@@ -46,6 +46,7 @@ void Server::serveRequest() {
         Message::RPC_ID rpc = Message::RPC_ID();
         send(new Message(Message::MessageType::Request, Message::OperationType::ECHO, cpid,
                          cpid.length(), rpc));
+        std::cout << "I AM THE CHILD!";
     } else if (msg->getMessage() == "q") {
         std::cout << "Server found exit message...\nTerminating Process" << std::endl;
         exit(EXIT_SUCCESS);
